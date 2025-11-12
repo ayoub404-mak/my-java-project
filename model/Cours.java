@@ -29,14 +29,19 @@ public class Cours implements Inscriptible {
     public void ajout_Contenu(Contenu e){
         tout_Contenus.add(e);
     }
-
+    public int get_size_tout_Contenus(){
+        return tout_Contenus.size();
+    }
+    
     public void affich_Contenu(){
         for (Contenu v : tout_Contenus){
             v.afficherDetails();
         }
     }
     public double calc_progress(Etudiant e){
-        return e.size_of_content_complet()/tout_Contenus.size()*1.0;
+        if(tout_Contenus.size()!=0)
+        return ((double)e.size_of_content_complet()/(tout_Contenus.size()))*100;
+       else return 0;
     }
     public void updat_progress(Etudiant e){
         progress.put(e,calc_progress(e));
@@ -48,4 +53,13 @@ public class Cours implements Inscriptible {
     public void inscrire(Etudiant etudiant){
         progress.put(etudiant, 0.0);
     }
+    @Override
+    public boolean equals(Object obj){
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass())return false;
+
+        Cours other = (Cours) obj;
+        return nom==other.nom;
+    }
+   
 }

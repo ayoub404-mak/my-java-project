@@ -10,7 +10,6 @@ public class Etudiant {
     private int age ;
     
     private ArrayList<Contenu> list_cont_complite=new ArrayList<>();
-    private ArrayList<Contenu> list_cont_NOcomplite=new ArrayList<>();
 
     public Etudiant(){}
     public Etudiant(String nom,String prenom,String CNE,int age){
@@ -52,16 +51,33 @@ public class Etudiant {
         this.age = age;
     }
 
+    public void  aff_list_cont_complite(){
+         for (Contenu v : list_cont_complite){
+            v.afficherDetails();
+        }
+    }
     public int size_of_content_complet(){
         return list_cont_complite.size();
     }
     
-    public void ajout_lis_cont_NOcomplete(Contenu c){
-        list_cont_NOcomplite.add(c);
-    }
+  
     public void ajout_lis_cont_complete(Contenu c){
-        list_cont_NOcomplite.remove(c);
         list_cont_complite.add(c);
     }
+    @Override
+    public boolean equals(Object obj){
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass())return false;
+
+        Etudiant other = (Etudiant) obj;
+        return CNE.equals(other.CNE);
+
    
+}
+
+@Override
+public int hashCode() {
+    return CNE != null ? CNE.hashCode() : 0;
+}
+
 }

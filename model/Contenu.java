@@ -36,6 +36,15 @@ public abstract class Contenu {
     }
     
     public abstract void afficherDetails();
+    @Override
+    public boolean equals(Object obj){
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass())return false;
+
+        Contenu other = (Contenu) obj;
+        return titre==other.titre;
+    }
+   
 
 }
 
