@@ -47,7 +47,7 @@ public class Cours implements Inscriptible {
         progress.put(e,calc_progress(e));
     }
     public void afficher_progress_conten(Etudiant e){
-        System.out.println("Progresse de "+e.getNom()+" : "+calc_progress(e));
+        System.out.printf("Progresse de "+e.getNom()+" : %.2f",calc_progress(e));
     }
     @Override
     public void inscrire(Etudiant etudiant){
@@ -60,6 +60,10 @@ public class Cours implements Inscriptible {
 
         Cours other = (Cours) obj;
         return nom==other.nom;
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(nom);
     }
    
 }

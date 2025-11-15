@@ -20,7 +20,7 @@ public class Video extends Contenu{
     }
 
     public void afficherDetails(){
-        System.out.println("duree: "+get_duree()+" | urlVideo: "+get_urlVideo());
+        System.out.println("titre : "+get_titre()+"| complete :"+get_estComplete()+" | duree: "+get_duree()+"duree: "+get_duree()+" | urlVideo: "+get_urlVideo());
     }
 
 }

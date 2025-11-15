@@ -8,7 +8,8 @@ import model.Video;
 
 public class mainEtudent {
     public static void main(String[] args) {
-        
+        //code problenes:
+        //la repetion des obj meme si on fais equals des obj
 
 
         Cours courJAVA = new Cours("programmation java");
@@ -32,11 +33,14 @@ public class mainEtudent {
         courJAVA.inscrire(ali);
 
         courJAVA.affich_Contenu();
+        //matnsax dir estcomplete
+
         ali.ajout_lis_cont_complete(q1);
         ali.ajout_lis_cont_complete(v1);
         //problemmmmmmmmmmmmm $$ 
         System.out.println("hna list list_cont_complite");
         ali.aff_list_cont_complite();
+
         //test size @@
         System.out.println("hada size kol a la3ba");
         System.out.println(ali.size_of_content_complet());

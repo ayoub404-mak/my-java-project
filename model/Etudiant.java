@@ -62,6 +62,7 @@ public class Etudiant {
     
   
     public void ajout_lis_cont_complete(Contenu c){
+        c.set_estComplete(true);
         list_cont_complite.add(c);
     }
     @Override
@@ -74,7 +75,7 @@ public class Etudiant {
 
    
 }
-
+ 
 @Override
 public int hashCode() {
     return CNE != null ? CNE.hashCode() : 0;

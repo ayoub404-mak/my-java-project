@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public abstract class Contenu {
     private String titre;
     private boolean estComplete;
@@ -36,6 +38,7 @@ public abstract class Contenu {
     }
     
     public abstract void afficherDetails();
+    
     @Override
     public boolean equals(Object obj){
         if (this == obj) return true;
@@ -43,6 +46,10 @@ public abstract class Contenu {
 
         Contenu other = (Contenu) obj;
         return titre==other.titre;
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(titre);
     }
    
 
