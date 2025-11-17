@@ -40,14 +40,11 @@ public class mainEtudent {
         //problemmmmmmmmmmmmm $$ 
         System.out.println("hna list list_cont_complite");
         ali.aff_list_cont_complite();
-
-        //test size @@
-        System.out.println("hada size kol a la3ba");
-        System.out.println(ali.size_of_content_complet());
-        System.out.println(courJAVA.get_size_tout_Contenus());
-        //ajoooooooooooooot
+        
         courJAVA.calc_progress(ali);
         courJAVA.updat_progress(ali);
         courJAVA.afficher_progress_conten(ali);
+
+
     }
 }
